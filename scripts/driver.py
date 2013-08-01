@@ -16,8 +16,8 @@ from ros_irobot_create.srv import *
 
 class CreateDriver:
 	def __init__(self):
-		port = rospy.get_param('/brown/irobot_create_2_1/port', "/dev/ttyUSB0")
-		self.autodock = rospy.get_param('/brown/irobot_create_2_1/autodock', 0.0)
+		port = rospy.get_param('/irobot/serial_port', "/dev/ttyAMA0")
+		self.autodock = rospy.get_param('/irobot/autodock', 0.0)
 		self.create = Create(port)
 		self.packetPub = rospy.Publisher('sensorPacket', SensorPacket)
 		self.odomPub = rospy.Publisher('odom',Odometry)
